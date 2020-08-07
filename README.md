@@ -241,8 +241,6 @@ const renderer = new THREE.WebGLRenderer({
 })
 renderer.domElement // 一个canvas，渲染器在其上绘制输出（对应于构造器传入的canvas）
 renderer.shadowMap.enabled = false // 如果设置开启，允许在场景中使用阴影贴图。默认是 false
-renderer.shadowMap.autoUpdate = true // 启用场景中的阴影自动更新。默认是 true（如果不需要动态光照/阴影，可以设置为false）
-renderer.shadowMap.needsUpdate = false // 当被设为true, 场景中的阴影贴图会在下次render调用时刷新。默认是 false
 renderer.xr.enabled = false // 该标志通知渲染器准备进行XR渲染。默认值为 false
 renderer.setClearColor(0xffffff, 1.0) // 设置颜色及其透明度
 ```
@@ -347,7 +345,6 @@ const filmPass = new FilmPass(
     648, // scanline count
     false // grayscale
 )
-// filmPass.renderToScreen = true // 后处理结束
 ```
 
 -   过程链
